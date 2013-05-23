@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" language="text/php">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(255,128,0)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NUMBER" type="NUMBER"/>
+</category>
+<style foreground="rgb(204,0,0)" id="LITERAL"/>
+<style font-weight="bold" foreground="rgb(204,0,0)" id="LITERAL_NUMBER"/>
+<category name="KEYWORD" style="KEYWORD">
+<token style="KEYWORD_ECHO" type="ECHO"/>
+<token style="KEYWORD_PRINT" type="PRINT"/>
+<token style="KEYWORD_FUNCTION" type="FUNCTION"/>
+<token style="KEYWORD_FALSE" type="FALSE"/>
+<token style="KEYWORD_THIS" type="THIS"/>
+<token style="KEYWORD_TRY" type="TRY"/>
+<token style="KEYWORD_ARRAY" type="ARRAY"/>
+<token style="KEYWORD_EXIT" type="EXIT"/>
+<token style="KEYWORD_NEW" type="NEW"/>
+<token style="KEYWORD_UNSET" type="UNSET"/>
+<token style="KEYWORD_ISSET" type="ISSET"/>
+<token style="KEYWORD_LOGICAL_OR" type="LOGICAL_OR"/>
+<token style="KEYWORD_LOGICAL_XOR" type="LOGICAL_XOR"/>
+<token style="KEYWORD_TRUE" type="TRUE"/>
+<token style="KEYWORD_LOGICAL_AND" type="LOGICAL_AND"/>
+<token style="KEYWORD_VAR" type="VAR"/>
+<token style="KEYWORD_LIST" type="LIST"/>
+<token style="KEYWORD_EVAL" type="EVAL"/>
+<token style="KEYWORD_RETURN" type="RETURN"/>
+</category>
+<style foreground="rgb(0,128,0)" id="KEYWORD"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_ECHO"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_PRINT"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_FUNCTION"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_FALSE"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_THIS"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_TRY"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_ARRAY"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_EXIT"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_NEW"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_UNSET"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_ISSET"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_LOGICAL_OR"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_LOGICAL_XOR"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_TRUE"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_LOGICAL_AND"/>
+<style font-weight="bold" foreground="rgb(0,115,170)" id="KEYWORD_VAR"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_LIST"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_EVAL"/>
+<style foreground="rgb(0,115,170)" id="KEYWORD_RETURN"/>
+<category name="ERROR" style="ERROR"/>
+<style font-style="italic" font-weight="bold" foreground="rgb(255,0,255)" id="ERROR"/>
+<category name="IDENTIFIER" style="IDENTIFIER">
+<token style="IDENTIFIER_IDENTIFIER" type="IDENTIFIER"/>
+<token style="IDENTIFIER_VARIABLE" type="VARIABLE">
+<region length="1" name="VARIABLE region" offset="0" style="IDENTIFIER_VARIABLE_VARIABLE region"/>
+</token>
+</category>
+<style foreground="rgb(0,0,0)" id="IDENTIFIER"/>
+<style foreground="rgb(0,115,170)" id="IDENTIFIER_IDENTIFIER"/>
+<style font-weight="bold" foreground="rgb(0,0,0)" id="IDENTIFIER_VARIABLE_VARIABLE region"/>
+<style foreground="rgb(0,0,0)" id="IDENTIFIER_VARIABLE"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_CLOSE_TAG" type="CLOSE_TAG"/>
+<token style="PUNCTUATOR_OPEN_TAG" type="OPEN_TAG"/>
+</category>
+<style foreground="rgb(0,0,255)" id="PUNCTUATOR"/>
+<style foreground="rgb(204,0,0)" id="PUNCTUATOR_CLOSE_TAG"/>
+<style font-weight="bold" foreground="rgb(204,0,0)" id="PUNCTUATOR_OPEN_TAG"/>
+</colorizer>

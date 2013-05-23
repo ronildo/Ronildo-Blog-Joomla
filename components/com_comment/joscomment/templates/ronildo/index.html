@@ -1,0 +1,231 @@
+<html>
+<head>
+</head>
+<body>
+<div id="comment">
+<!-- <<< html code above is just to allow preview of template -->
+
+JOOMLACOMMENT TEMPLATE : ronildo
+
+/*-----------------------------------------------------------*/
+/*--  only {xxx}{/xxx} blocks are taken in account  ---------*/
+/*-----------------------------------------------------------*/
+
+{readon}
+	<div class='write_comment'>
+		<a href="{READON_LINK}#JOSC_TOP" class="readon">{READON_WRITE_COMMENT} ({READON_COUNT})</a>
+	</div>
+	<br clear="all" />
+	{BLOCK-preview}
+	<div class='comment_preview_container'>
+		{preview-lines}
+	</div>
+	{/BLOCK-preview}
+{/readon}
+{previewline}
+	<div class='comment_preview'>
+    	<a href="{PREVIEW_LINK}#josc{id}">{PREVIEW_DATE}&nbsp;<b>{PREVIEW_TITLE}</b></a>
+	</div>
+{/previewline}
+
+{search}
+<form name='joomlacommentsearch' method='post'>
+  <a name='SearchForm'></a>
+  {_HIDDEN_VALUES}
+  <table align='center' cellpadding='0' cellspacing='0' class='form'>
+    <tr>
+      <td colspan='3' class='sectiontableheader' align='center'>{_JOOMLACOMMENT_SEARCH}</td>
+    </tr>
+    <tr class='sectiontableentry1'>
+      <td class='item'>{_JOOMLACOMMENT_PROMPT_KEYWORD}</td>
+	  <td class='item'><input name='tsearch' type='text' class='inputbox' size='40' /></td>
+	  <td class='item'><input name='bsearch' type='button' class='button' value='{_JOOMLACOMMENT_SEARCH}' onclick='JOSC_search()' /></td>
+	</tr>
+    <tr class='sectiontableentry2'>
+      <td colspan='3' class='item'>
+        <input type='radio' name='rsearchphrase' onClick='JOSC_rsearchphrase_selection="any"' checked='checked' />{_JOOMLACOMMENT_SEARCH_ANYWORDS}
+        <input type='radio' name='rsearchphrase' onClick='JOSC_rsearchphrase_selection="all"' />{_JOOMLACOMMENT_SEARCH_ALLWORDS}
+        <input type='radio' name='rsearchphrase' onClick='JOSC_rsearchphrase_selection="exact"' />{_JOOMLACOMMENT_SEARCH_PHRASE}
+	  </td>
+    </tr>
+  </table>
+  <div style='margin-bottom: 5px;'></div>
+</form>
+{/search}
+
+{searchresults}
+<div id='SearchResults'>
+  <a name='SearchResults'></a>
+  <table align='center' cellpadding='0' cellspacing='0' class='form'>
+    <tr>
+      <td class='sectiontableheader' align='center'>{resulttitle}</td>
+    </tr>
+	{searchresult}
+    <tr>
+      <td>
+	    <table width='100%' class='{postclass}' align='center' cellpadding='0' cellspacing='0' class='searchresult'>
+		  <tbody>
+		  <tr class='small'>
+            <td class='item'>{title} {_JOOMLACOMMENT_BY} {name}</td>
+	      </tr>
+          <tr class='item'>
+            <td class='item'><a  href='{address}'>{preview}</a></td>
+          </tr>
+          <tr class='small'>
+            <td class='item'>{date}</td>
+          </tr>
+          </tbody>
+        </table>
+	  </td>
+    </tr>
+    {/searchresult}
+  </table>
+  <div style='margin-bottom: 5px;'></div>
+</div>
+{/searchresults}
+
+
+/*-----------------------------------------------------------------------*/
+/*--  everything (!) inside body /body are taken in account  ---------*/
+/*-----------------------------------------------------------------------*/
+{body}
+<a name='JOSC_TOP'></a>
+{menu}
+<!-- table align='center' class='sectiontableheader' id='CommentMenu' width='100%' cellpadding='0' cellspacing='0' border='0'>
+  <tr>
+    <td align='left' class='label'>{_JOOMLACOMMENT_COMMENTS_TITLE}</td>
+	<td align='right' class='buttons'>
+	  <table cellpadding='0' cellspacing='0' border='0'>
+	    <tr>
+		{BLOCK-add_new}
+		<td class='button'><a id='_JOOMLACOMMENT_ADDNEW' href='javascript:{BUTTON_ADDNEW_js}'>{_JOOMLACOMMENT_ADDNEW}</a></td>
+		{/BLOCK-add_new}
+		{BLOCK-delete_all}
+		<td class='button'><a id='_JOOMLACOMMENT_DELETEALL' href='javascript:{BUTTON_DELETEALL_js}'>{_JOOMLACOMMENT_DELETEALL}</a></td>
+		{/BLOCK-delete_all}
+		{BLOCK-search}
+		<td class='button'><a id='_JOOMLACOMMENT_SEARCH' href='javascript:{BUTTON_SEARCH_js}'>{_JOOMLACOMMENT_SEARCH}</a></td>
+		{/BLOCK-search}
+		{BLOCK-rss}
+		<td class='button'><a id='_JOOMLACOMMENT_RSS' href='{BUTTON_RSS_URL}'>{_JOOMLACOMMENT_RSS}</a></td>
+		{/BLOCK-rss}
+	    </tr>
+	  </table>
+	</td>
+  </tr>
+</table -->
+
+	<div class="topo-comentario"><span class="fonte-nova">Comentários</span></div>
+{/menu}
+
+<table align='center' id='CommentPageNav' width='100%' cellpadding='0' cellspacing='0' border='0'>
+<tr><td>
+{pagenav}
+<!-- here will be inserted the page nav -->
+{/pagenav}
+</td><td id='JOSC_busypage'></td></tr>
+</table>
+
+{post}
+
+<div id="comentarios">
+	<ul>
+		<li>
+			{avatar_picture}
+			<div class="corpo-comentario">
+					<p>
+						<strong>
+							<cite>
+								<a name='josc{id}'></a>
+								<span class='postusername'>{username}</span>
+							</cite>
+						</strong> escreveu em 
+							<strong>{date}</strong>
+					</p>
+					<p class="conteudo-comentario">
+						{content}
+					</p>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+{/post}
+
+<div id='JOSC_formpos'>
+{form}
+<form name='joomlacommentform' method='post' action='{self}'>
+  <a name='CommentForm'></a>
+  {_HIDDEN_VALUES}
+  
+	<div class="form-comentarios">
+		<h5>
+			<span class="fonte-nova">Escrever Comentário</span>  
+		</h5>
+		
+		<div class="primeiros-campos">
+			<input name='tname' tabindex="1" type='text' onfocus='this.select();' class='inputbox nome' value='Nome' {registered_readonly}/><br />
+			{BLOCK-_ENTEREMAIL}<input name='temail' tabindex="2" onfocus='this.select();' type='text' class='inputbox email' value='Email' {registered_readonly}/>{/BLOCK-_ENTEREMAIL}<br />
+			{BLOCK-_ENTERWEBSITE}<input name='twebsite' tabindex="3" onfocus='this.select();' type='text' class='inputbox site' value='Site'/><br />{/BLOCK-_ENTERWEBSITE}
+		{BLOCK-_CAPTCHATXT}
+			<table class='captchacontainer' cellpadding='0' cellspacing='0'>
+				<tr>
+	          <td><input type='text' tabindex="4" onfocus='this.select();' name='security_try' id='security_try' value="Captcha" maxlength='10' class='inputbox captcha' /></td>
+	          <td>{security_image}</td>
+	        </tr>
+	      	</table>
+		{/BLOCK-_CAPTCHATXT}
+		</div>
+		
+		<textarea name='tcomment' tabindex="5" class='inputbox caixacomment' cols='{formareacols}' rows='10'></textarea><br />
+
+        <input name='ttitle' type='text' class='inputbox' style='display:none;' size='40'/>
+		
+		<div style="display:none;">{notifyselect}</div>
+		<br clear="all" />
+		<input type='button' tabindex="6" class='button' name='bsend' value='{_SENDFORM}' onclick='JOSC_editPost(-1,-1)' /><br />
+		
+		<div id='JOSC_busy'></div>
+		
+		
+		<p>Para ter sua foto no comentário faça o seu cadastro no site <a href="http://en.gravatar.com/site/signup/" title="Gravatar" target="_blank">Gravatar</a>.</p>
+		
+    
+	{BLOCK-_UBBCode}
+      	<div class='item'>{_UBBCODE}</div></td>
+
+      	<div class='buttoncontainer'>
+          <div style='float: left;'> {UBBCodeButtons} </div>
+          <div style='float: left;'> {UBBCodeSelect} </div>
+        </div>
+		<div class='item'>
+      		{BLOCK-emoticons}{emoticons}{/BLOCK-emoticons}
+		</div>
+    {/BLOCK-_UBBCode}
+	
+
+  
+	  
+	</div>
+  
+</form>
+{/form}
+</div>
+
+{poweredby}
+<!-- powered by will be inserted here.
+	 to hide, please do not delete. Just set in css #poweredby { display:none; }  
+  -->
+{/poweredby}
+<!-- <div class="backbutton" align="center">
+		<a href="javascript:JOSC_goToAnchor('JOSC_TOP');">^^^</a>
+</div> -->
+{/body}
+
+<!-- >>> html code below is just to allow preview of template -->
+</div>
+</body>
+</html>

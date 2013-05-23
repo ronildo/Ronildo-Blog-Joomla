@@ -1,0 +1,17 @@
+div.tweetmebutton{
+ padding: 0px 0px 0px 0px;
+ float: right;
+}
+
+td.tweetmebutton{
+padding-right: 0px;
+padding-top: 5px;
+padding-bottom:0px;
+margin-bottom:0px;
+margin-top: 0px;
+vertical-align:top;
+}
+
+td.space_right{
+padding: 0px 0px 0px 0px;
+}

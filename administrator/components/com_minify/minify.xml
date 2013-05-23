@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+	<name>minify</name>
+	<productName>minify</productName>
+	<creationDate>03.01.2009</creationDate>
+	<author>Cedric Walter</author>
+	<authorEmail>www.waltercedric.com</authorEmail>
+	<authorUrl>www.waltercedric.com</authorUrl>
+	<copyright>(c) 2009 Cedric Walter www.waltercedric.com </copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Minify all js and css to reduce numb er of http request</description>
+	
+	<files>
+		    <filename>cache/index.html</filename>	
+	    	<filename>index.php</filename>
+		    <filename>utils.php</filename>
+		    <filename>.htaccess</filename>
+		    
+		    <filename>lib/JSMin.php</filename>
+			<filename>lib/Minify.php</filename>
+			<filename>lib/Solar/Dir.php</filename>	
+			<filename>lib/Solar/index.html</filename>	
+			
+			<filename>lib/Minify/Build.php</filename>
+			<filename>lib/Minify/CommentPreserver.php</filename>
+			<filename>lib/Minify/CSS.php</filename>
+			<filename>lib/Minify/HTML.php</filename>
+			<filename>lib/Minify/ImportProcessor.php</filename>
+			<filename>lib/Minify/Javascript.php</filename>
+			<filename>lib/Minify/Lines.php</filename>
+			<filename>lib/Minify/Packer.php</filename>
+			<filename>lib/Minify/Source.php</filename>
+			<filename>lib/Minify/YUICompressor.php</filename>
+			<filename>lib/Minify/index.html</filename>
+			
+			<filename>lib/Minify/Cache/File.php</filename>
+			<filename>lib/Minify/Cache/Memcache.php</filename>
+			<filename>lib/Minify/Cache/index.html</filename>
+				
+			<filename>lib/Minify/Controller/Base.php</filename>	
+			<filename>lib/Minify/Controller/Files.php</filename>	
+			<filename>lib/Minify/Controller/Groups.php</filename>	
+			<filename>lib/Minify/Controller/MinApp.php</filename>	
+			<filename>lib/Minify/Controller/Page.php</filename>	
+			<filename>lib/Minify/Controller/Version1.php</filename>		
+			<filename>lib/Minify/Controller/index.html</filename>		
+				
+			<filename>lib/Minify/CSS/UriRewriter.php</filename>	
+			<filename>lib/Minify/CSS/index.html</filename>	
+				
+			<filename>lib/HTTP/ConditionalGet.php</filename>	
+			<filename>lib/HTTP/Encoder.php</filename>	
+			<filename>lib/HTTP/index.html</filename>	
+			
+			<filename>config.php</filename>
+			<filename>groupsConfig.php</filename>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">en-GB.com_minify.ini</language>
+	</languages>
+	
+	<administration>
+		<menu>Minify4Joomla</menu>
+		<submenu>
+			<menu task="settings">Settings</menu>
+			<menu task="language">Language</menu>
+			<menu task="urlBuilder">URL builder</menu>
+			<menu task="emptyCache">Empty Cache</menu>
+			<menu task="documentation">Documentation</menu>
+			<menu task="about">About</menu>
+			<menu task="checkSystem">Check/Statistics</menu>
+			<menu task="checkLatest">Check for latest version</menu>
+		</submenu>
+		
+		<filename file="meta">en-GB.xml</filename>
+		
+		<languages>
+			<language tag="en-GB">en-GB.com_minify.ini</language>
+		</languages>
+		
+		<media folder="logo">
+		   <filename>minify.png</filename>
+		</media>
+		
+		
+		<files>
+			<filename>logo/www.waltercedric.com.jpg</filename>
+			<filename>logo/wiki.waltercedric.com.jpg</filename>
+			<filename>logo/forums.waltercedric.com.jpg</filename>
+			<filename>logo/demo2.waltercedric.com.jpg</filename>
+			<filename>logo/bugs.waltercedric.com.jpg</filename>
+			<filename>logo/minify4joomla.gif</filename>
+			<filename>logo/index.html</filename>
+			
+			<filename>manuals/index.html</filename>
+			<filename>manuals/en-GB/about.html</filename>
+			<filename>manuals/en-GB/documentation.html</filename>
+			<filename>manuals/en-GB/index.html</filename>
+			
+			<filename>class/configHelper.php</filename>
+			<filename>class/helper.php</filename>
+			<filename>class/systemchecker.php</filename>
+			<filename>class/head.php</filename>
+			<filename>class/patcher.php</filename>
+			<filename>class/index.html</filename>
+			
+			<filename>builder/index.php</filename>
+			<filename>builder/ocCheck.php</filename>
+			<filename>builder/_index.js</filename>
+			<filename>builder/bm.js</filename>
+			<filename>builder/rewriteTest.js</filename>	
+			<filename>builder/jquery.min.js</filename>	
+			
+			<filename>controller.php</filename>
+			<filename>admin.minify.php</filename>
+			
+			<filename>licence.minify4joomla.txt</filename>
+			<filename>licence.minify.txt</filename>
+			<filename>index.html</filename>
+			<filename>toolbar.minify.html.php</filename>
+			<filename>toolbar.minify.php</filename>
+			<filename>minify.xml</filename>
+		</files>
+	</administration>
+</install>

@@ -1,0 +1,225 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Install security images form code in existing Joomla code.</title>
+</head>
+
+<body>
+
+<p><font size="5">Install security images form code in existing
+Joomla code...</font></p>
+
+<table border="2">
+    
+    <tr>
+        <td bgcolor="#FFFF00">point A</td>
+        <td bgcolor="#C0C0C0"><strong>Open</strong> <font
+        face="Courier New">components\com_registration\registration.html.php</font>
+        <strong>line 54</strong> in <font color="#0000FF">function
+        registerForm($option, $useractivation)</font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><font color="#808080">&lt;tr&gt;<br>
+        &lt;td&gt;<br>
+        &lt;?php echo _PROMPT_EMAIL; ?&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;td&gt;<br>
+        &lt;input type=&quot;text&quot;
+        name=&quot;confirmEmail&quot; class=&quot;inputbox&quot;
+        size=&quot;40&quot; /&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;</font><br>
+        <br>
+        <strong>&lt;?php <br>
+        //security image by www.waltercedric.com<br>
+        global $mosConfig_absolute_path;<br>
+        if
+        (file_exists($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.lostPassForm.php'))
+        {<br>
+        require_once($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.lostPassForm.php');<br>
+        }<br>
+        //end security image by www.waltercedric.com<br>
+        ?&gt;</strong><br>
+        <font color="#808080"><br>
+        &lt;tr&gt;<br>
+        &lt;td colspan=&quot;2&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;option&quot;
+        value=&quot;&lt;?php echo $option;?&gt;&quot; /&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;task&quot;
+        value=&quot;sendNewPass&quot; /&gt; &lt;input
+        type=&quot;submit&quot; class=&quot;button&quot;
+        value=&quot;&lt;?php echo _BUTTON_SEND_PASS; ?&gt;&quot;
+        /&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;</font></td>
+    </tr>
+    <tr>
+        <td bgcolor="#FFFF00">point B</td>
+        <td bgcolor="#C0C0C0"><strong>Open</strong> <font
+        face="Courier New">components\com_registration\registration.html</font>.<strong>at
+        line 164 in</strong> <font color="#0000FF">function
+        registerForm($option, $useractivation)</font></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><font color="#808080">&lt;tr&gt;<br>
+        &lt;td&gt;<br>
+        &lt;?php echo _REGISTER_VPASS; ?&gt; *<br>
+        &lt;/td&gt;<br>
+        &lt;td&gt;<br>
+        &lt;input class=&quot;inputbox&quot;
+        type=&quot;password&quot; name=&quot;password2&quot;
+        size=&quot;40&quot; value=&quot;&quot; /&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt; </font><br>
+        <strong>&lt;?php <br>
+        //security image by www.waltercedric.com<br>
+        global $mosConfig_absolute_path;<br>
+        if
+        (file_exists($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.html.registerForm.php'))
+        {<br>
+        require_once($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.html.registerForm.php');<br>
+        }<br>
+        //end security image by www.waltercedric.com<br>
+        ?&gt;</strong><font color="#808080"><br>
+        &lt;tr&gt;<br>
+        &lt;td colspan=&quot;2&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        </font></td>
+    </tr>
+    <tr>
+        <td><font color="#808080">point C</font></td>
+        <td>&nbsp;</td>
+    </tr>
+    
+</table>
+
+<p>&nbsp;</p>
+
+<p><font size="5">Install security images checking code in
+existing Joomla code...</font></p>
+
+<table border="2">
+    
+    <tr>
+        <td bgcolor="#FFFF00">Point 1</td>
+        <td bgcolor="#C0C0C0"><strong>Open</strong> <font
+        face="Courier New Baltic">\components\com_registration\registration.php</font><strong>
+        after line 61 add what is in bold below</strong></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><font color="#808080">$checkusername = mosGetParam(
+        $_POST, 'checkusername', '' );<br>
+        $checkusername = $database-&gt;getEscaped( $checkusername
+        );<br>
+        $confirmEmail = mosGetParam( $_POST, 'confirmEmail', '');<br>
+        $confirmEmail = $database-&gt;getEscaped( $confirmEmail
+        );<br>
+        </font><br>
+        <strong>//securityimages by www.waltercedric.com<br>
+        global $mosConfig_absolute_path;<br>
+        if
+        (file_exists($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.SendNewPass.php'))
+        {<br>
+        include_once($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.SendNewPass.php');
+        <br>
+        }<br>
+        //end security images by www.waltercedric.com</strong><br>
+        <font color="#808080"><br>
+        $query = &quot;SELECT id&quot;</font></td>
+    </tr>
+    <tr>
+        <td bgcolor="#FFFF00">Point 2</td>
+        <td bgcolor="#C0C0C0"><strong>Open</strong><font
+        face="Courier New">
+        \components\com_registration\registration.php</font> <strong>after
+        line 123 (123 is after added the point 1)</strong></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><font color="#808080">function saveRegistration(
+        $option ) {<br>
+        global $acl;<br>
+        $database = & JFactory::getDBO();
+        global $mosConfig_sitename, $mosConfig_live_site,
+        $mosConfig_useractivation,
+        $mosConfig_allowUserRegistration;<br>
+        global $mosConfig_mailfrom, $mosConfig_fromname,
+        $mosConfig_mailfrom, $mosConfig_fromname;<br>
+        <br>
+        if ($mosConfig_allowUserRegistration=='0') {<br>
+        mosNotAuth();<br>
+        return;<br>
+        }<br>
+        </font><br>
+        <strong>//securityimages by www.waltercedric.com<br>
+        global $mosConfig_absolute_path;<br>
+        if
+        (file_exists($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.SaveRegistration.php'))
+        {<br>
+        include_once($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/registration.SaveRegistration.php');<br>
+        } <br>
+        //end security images by www.waltercedric.com<br>
+        </strong><br>
+        <font color="#808080">$row = new mosUser( $database );<br>
+        <br>
+        if (!$row-&gt;bind( $_POST, 'usertype' )) {<br>
+        echo &quot;&lt;script&gt;
+        alert('&quot;.$row-&gt;getError().&quot;');
+        window.history.go(-1); &lt;/script&gt;\n&quot;;<br>
+        exit();<br>
+        }</font></td>
+    </tr>
+    <tr>
+        <td bgcolor="#FFFF00">Point 3</td>
+        <td bgcolor="#C0C0C0"><strong>Open</strong> <font
+        face="Courier New">includes\joomla.php</font> <strong>after
+        line 610</strong></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><font color="#808080">$passwd = md5( $passwd );<br>
+        $bypost = 1;<br>
+        }<br>
+        $remember = mosGetParam( $_POST, 'remember', '' );</font><br>
+        <br>
+        <strong>//securityimages by www.waltercedric.com<br>
+        global $mosConfig_absolute_path;<br>
+        if
+        (file_exists($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/joomla.login.php'))
+        {<br>
+        include_once($mosConfig_absolute_path.'/administrator/components/com_securityimages/patches/joomla.login.php');
+        <br>
+        }<br>
+        //end security images by www.waltercedric.com</strong><br>
+        <font color="#808080"><br>
+        if (!$username || !$passwd) {<br>
+        echo &quot;&lt;script&gt;
+        alert(\&quot;&quot;._LOGIN_INCOMPLETE.&quot;\&amp;quote;
+        window.history.go(-1); &lt;/script&gt;\n&quot;;<br>
+        exit();<br>
+        } else {</font><br>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    
+</table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="4" cellspacing="1" width="100%">
+<tbody>    <tr>
+        <td class="sectiontableheader">Comments</td>
+    </tr>
+</table>
+</body>
+</html>

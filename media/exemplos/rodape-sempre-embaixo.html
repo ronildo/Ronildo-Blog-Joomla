@@ -1,0 +1,95 @@
+
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"> 
+<head> 
+	<title>How to keep footers at the bottom of the page (CSS demo)</title> 
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" /> 
+	<meta name="description" content="How to keep footers at the bottom of the page (CSS demo)" /> 
+	<meta name="keywords" content="How to keep footers at the bottom of the page (CSS demo)" /> 
+	<meta name="robots" content="index, follow" /> 
+	<style media="screen" type="text/css"> 
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	.tudo {
+		min-height:100%;
+		position:relative;
+	}
+	.topo {
+		background:#ff0;
+		padding:10px;
+	}
+	.conteudo {
+		padding:10px;
+		padding-bottom:60px;	/* Height of the footer */
+	}
+	.rodape {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:60px;			/* Height of the footer */
+		background:#6cf;
+	}
+	/* other non-essential CSS */
+	.topo p,
+	.topo h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	.topo p {
+		margin:0;
+		padding:10px;
+	}
+	</style> 
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]--> 
+</head> 
+<body> 
+ 
+<div class="tudo"> 
+	<div class="topo"> 
+		<!-- Começo do Topo --> 
+		<p><a href="http://www.ronildo.com.br/blog/css/311-rodape-sempre-embaixo" title="Como manter o rodapé sempre embaixo">&laquo; Voltar para o artigo</a> por <a href="http://www.ronildo.com.br/blog" title="Blog Ronildo Costa">Blog Ronildo Costa</a></p> 
+		<h1>Como manter o rodapé no final da página (CSS demo)</h1> 
+		<!-- Fim do Topo --> 
+	</div> 
+	<div id="body"> 
+		<!-- Começo do Conteúdo --> 
+		<p>Nesta página de exemplo o footer é mantido sempre no final da página, independente da resolução do monitor. Isso funciona em todos os browser's, exceto IE 6 pra baixo.</p>
+		<p><a title="Como manter o rodapé sempre embaixo" href="http://www.ronildo.com.br/blog/css/311-rodape-sempre-embaixo">Voltar para o artigo</a></p>
+		<!-- Fim do conteúdo --> 
+	</div> 
+	<div class="rodape"> 
+		<!-- Começo do rodapé --> 
+		<p><strong>Rodapé</strong> (Sempre no final da página). <a title="Como manter o rodapé sempre embaixo" href="http://www.ronildo.com.br/blog/css/311-rodape-sempre-embaixo">Ver artigo</a>.</p> 
+		<!-- Fim do Rodapé --> 
+	</div> 
+</div>
+
+	<script type="text/javascript">
+	
+	 var _gaq = _gaq || [];
+	 _gaq.push(['_setAccount', 'UA-354445-4']);
+	 _gaq.push(['_trackPageview']);
+	_gaq.push(['_trackPageLoadTime']);
+	
+	 (function() {
+	   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	 })();
+	
+	</script>
+
+ 
+</body> 
+</html> 

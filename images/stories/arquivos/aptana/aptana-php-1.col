@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" language="text/php">
+<category name="WHITESPACE" style="WHITESPACE">
+<token style="WHITESPACE_DOC_COMMENT" type="DOC_COMMENT"/>
+<token style="WHITESPACE_COMMENT" type="COMMENT"/>
+<token style="WHITESPACE_WHITESPACE" type="WHITESPACE"/>
+</category>
+<style foreground="rgb(0,128,0)" id="WHITESPACE"/>
+<style foreground="rgb(0,0,255)" id="WHITESPACE_DOC_COMMENT"/>
+<style foreground="rgb(255,153,0)" id="WHITESPACE_COMMENT"/>
+<style foreground="rgb(0,0,0)" id="WHITESPACE_WHITESPACE"/>
+<category name="LITERAL" style="LITERAL"/>
+<style foreground="rgb(204,0,0)" id="LITERAL"/>
+<category name="KEYWORD" style="KEYWORD">
+<token style="KEYWORD_PRINT" type="PRINT"/>
+<token style="KEYWORD_ECHO" type="ECHO"/>
+</category>
+<style foreground="rgb(0,102,0)" id="KEYWORD"/>
+<style foreground="rgb(0,0,255)" id="KEYWORD_PRINT"/>
+<style foreground="rgb(0,0,255)" id="KEYWORD_ECHO"/>
+<category name="ERROR" style="ERROR"/>
+<style foreground="rgb(255,0,0)" id="ERROR"/>
+<category name="IDENTIFIER" style="IDENTIFIER"/>
+<style foreground="rgb(0,0,0)" id="IDENTIFIER"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_CURLY_CLOSE" type="CURLY_CLOSE"/>
+<token style="PUNCTUATOR_OPEN_TAG" type="OPEN_TAG"/>
+<token style="PUNCTUATOR_CLOSE_PAREN" type="CLOSE_PAREN"/>
+<token style="PUNCTUATOR_SEMICOLON" type="SEMICOLON"/>
+<token style="PUNCTUATOR_CURLY_OPEN" type="CURLY_OPEN"/>
+<token style="PUNCTUATOR_CLOSE_TAG" type="CLOSE_TAG"/>
+<token style="PUNCTUATOR_OPEN_PAREN" type="OPEN_PAREN"/>
+</category>
+<style foreground="rgb(0,0,255)" id="PUNCTUATOR"/>
+<style foreground="rgb(0,0,153)" id="PUNCTUATOR_CURLY_CLOSE"/>
+<style foreground="rgb(0,0,128)" id="PUNCTUATOR_OPEN_TAG"/>
+<style foreground="rgb(0,0,153)" id="PUNCTUATOR_CLOSE_PAREN"/>
+<style foreground="rgb(0,0,0)" id="PUNCTUATOR_SEMICOLON"/>
+<style foreground="rgb(0,0,153)" id="PUNCTUATOR_CURLY_OPEN"/>
+<style foreground="rgb(0,0,128)" id="PUNCTUATOR_CLOSE_TAG"/>
+<style foreground="rgb(0,0,153)" id="PUNCTUATOR_OPEN_PAREN"/>
+</colorizer> 
