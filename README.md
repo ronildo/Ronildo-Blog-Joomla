@@ -5,20 +5,15 @@
 2. Create a MySQL database
 
 3. Change the following variables on configuration.php
-
-3.1 $log_path
-
-3.2 $tmp_path
-
-3.3 $host
-
-3.4 $user
-
-3.5 $db
-
-3.6 $password
+ 1. $log_path
+ 2. $tmp_path
+ 3. $host
+ 4. $user
+ 5. $db
+ 6. $password
 
 4. The last step is changing the .htaccess, setting the
+
 ```bash
   # RewriteBase /blog
 ```
